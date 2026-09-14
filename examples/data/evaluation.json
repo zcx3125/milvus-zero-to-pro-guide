@@ -1,0 +1,8 @@
+[
+  {"query": "我忘了登录公司的密码，要怎么改？", "tenant": "tenant_a", "relevant_ids": [201]},
+  {"query": "出差花的钱怎么申请报销，需要提供什么？", "tenant": "tenant_a", "relevant_ids": [202]},
+  {"query": "我在家里怎样才能打开公司的内网？", "tenant": "tenant_a", "relevant_ids": [203]},
+  {"query": "想休几天年假，需要在哪里提交申请？", "tenant": "tenant_a", "relevant_ids": [204]},
+  {"query": "收到一封看起来是诈骗的邮件该怎么办？", "tenant": "tenant_a", "relevant_ids": [205]},
+  {"query": "笔记本按开机键没反应，找谁修？", "tenant": "tenant_a", "relevant_ids": [206]}
+]

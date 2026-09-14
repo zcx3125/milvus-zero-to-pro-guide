@@ -1,0 +1,2 @@
+# 与本教程固定的 Milvus Server 3.0.1 配套；建议 Python 3.11 / 3.12。
+pymilvus==3.0.1

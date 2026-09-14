@@ -1,0 +1,11 @@
+[
+  {"id": 201, "tenant": "tenant_a", "category": "account", "text": "忘记办公账号密码时，请打开账号自助平台，点击重置密码，通过手机验证码验证后设置新密码。"},
+  {"id": 202, "tenant": "tenant_a", "category": "expense", "text": "申请差旅报销需要上传电子发票，填写出差日期、费用金额和项目编号，再提交直属主管审批。"},
+  {"id": 203, "tenant": "tenant_a", "category": "network", "text": "在家访问公司内部系统时，应先连接公司 VPN，输入办公账号，并完成双因素认证。"},
+  {"id": 204, "tenant": "tenant_a", "category": "leave", "text": "申请年假，请进入人事系统的休假页面，选择年假类型和起止日期，提交直属主管审批。"},
+  {"id": 205, "tenant": "tenant_a", "category": "security", "text": "发现疑似钓鱼邮件时，不要点击链接或下载附件，应使用举报功能转交安全团队处理。"},
+  {"id": 206, "tenant": "tenant_a", "category": "device", "text": "办公电脑无法开机时，先检查电源和充电器；仍无法启动，请在服务台提交硬件维修工单。"},
+  {"id": 207, "tenant": "tenant_a", "category": "network", "text": "会议室无线投屏失败时，确认电脑和投屏设备位于指定访客网络，再重新输入屏幕显示的连接码。"},
+  {"id": 208, "tenant": "tenant_a", "category": "expense", "text": "购买办公设备前，应在采购系统填写物品名称、预算和用途，审批完成后由采购人员统一下单。"},
+  {"id": 902, "tenant": "tenant_b", "category": "account", "text": "乙公司员工忘记办公账号密码时，必须联系乙公司服务台，不能使用甲公司的账号自助平台。"}
+]

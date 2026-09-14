@@ -1,0 +1,7 @@
+[
+  {"id": 101, "tenant": "tenant_a", "category": "account", "text": "忘记办公账号密码，请在自助平台点击重置密码，并完成手机验证。", "vector": [1.0, 0.1, 0.0]},
+  {"id": 102, "tenant": "tenant_a", "category": "expense", "text": "差旅报销需要上传发票，填写出差日期和项目编号。", "vector": [0.0, 1.0, 0.1]},
+  {"id": 103, "tenant": "tenant_a", "category": "network", "text": "远程访问内网前，请连接公司 VPN 并完成双因素认证。", "vector": [0.1, 0.0, 1.0]},
+  {"id": 104, "tenant": "tenant_a", "category": "account", "text": "办公账号被锁定，请联系服务台核验身份后解锁。", "vector": [0.85, 0.25, 0.15]},
+  {"id": 901, "tenant": "tenant_b", "category": "account", "text": "乙公司的账号重置流程由乙公司管理员处理。这是虚构的其他租户数据。", "vector": [0.98, 0.08, 0.04]}
+]
