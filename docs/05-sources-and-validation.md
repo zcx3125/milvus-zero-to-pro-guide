@@ -18,7 +18,11 @@
 
 参考的原文件是 [Milvus 3.0.1 发布附件](https://github.com/milvus-io/milvus/releases/download/v3.0.1/milvus-standalone-docker-compose.yml)。
 
+配置改编的授权来源与许可证副本见[第三方说明](../THIRD_PARTY_NOTICES.md)。
+
 编写时实际读取了该发布附件，而不只依赖 `master` 分支的安装脚本。官方仓库 tag 下的源码 Compose 与发布附件可能仍有不同的镜像或依赖标签，复现时以明确记录的文件为准。
+
+真实启动的 `milvusdb/milvus:v3.0.1` 镜像通过版本 API 返回 `3.0-20260902-658cbd1689` 这样的构建标识，而不是字面量 `3.0.1`。因此集成检查同时核对容器镜像标签与 SDK 返回的 3.0 构建标识，不将这种字符串差异误判为服务不可用。
 
 Milvus、etcd 的镜像和版本与该发布附件一致。MinIO 使用相同版本，但改从 MinIO 官方 Quay 仓库拉取：
 

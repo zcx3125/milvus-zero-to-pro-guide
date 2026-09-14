@@ -6,6 +6,7 @@
 
 import argparse
 import importlib.util
+import re
 import sys
 from pathlib import Path
 
@@ -34,8 +35,12 @@ def main():
     client = connect()
     try:
         version = client.get_server_version(timeout=TIMEOUT)
-        if not version.lstrip("v").startswith("3.0.1"):
-            raise RuntimeError("集成测试要求教程对应的 Milvus Server 3.0.1。")
+        print(f"测试服务器标识：{version}")
+        # The official v3.0.1 image reports a build identifier such as
+        # 3.0-20260902-658cbd1689, not always its release tag. CI separately
+        # checks the exact container image; here accept either documented form.
+        if not re.fullmatch(r"v?3\.0(?:\.1(?:[-+][A-Za-z0-9.-]+)?|-\d{8}-[0-9a-f]+)", version):
+            raise RuntimeError("服务端标识不属于本教程的 3.0 版本范围，请检查镜像。")
         hits, remaining = load_crud_module().run_demo(client)
         if not hits or int(hits[0]["id"]) != 101:
             raise AssertionError("精确 COSINE 检索的首条应为 101。")
