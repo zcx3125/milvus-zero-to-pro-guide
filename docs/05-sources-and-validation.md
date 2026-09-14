@@ -20,12 +20,12 @@
 
 编写时实际读取了该发布附件，而不只依赖 `master` 分支的安装脚本。官方仓库 tag 下的源码 Compose 与发布附件可能仍有不同的镜像或依赖标签，复现时以明确记录的文件为准。
 
-本仓库使用的核心镜像与该发布附件一致：
+Milvus、etcd 的镜像和版本与该发布附件一致。MinIO 使用相同版本，但改从 MinIO 官方 Quay 仓库拉取：
 
 ```text
 milvusdb/milvus:v3.0.1
 quay.io/coreos/etcd:v3.5.25
-minio/minio:RELEASE.2024-12-18T13-15-44Z
+quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z
 ```
 
 为了让本机学习更容易管理，做了以下调整：
@@ -39,6 +39,8 @@ minio/minio:RELEASE.2024-12-18T13-15-44Z
 7. MinIO 使用 `MINIO_ROOT_USER` / `MINIO_ROOT_PASSWORD`，教学值与 Milvus 默认对象存储凭据保持一致。
 8. 显式沿用发布附件的 `MQ_TYPE: woodpecker`，由 Milvus 嵌入式运行，无单独消息队列容器。
 9. 增加可选 Attu 3.0.0，宿主机端口为 8000，容器端口为 3000，连接使用 `standalone:19530`。
+
+首轮真实集成检查发现，发布附件中的 Docker Hub `minio/minio` 地址返回 `pull access denied`。2026-09-14 通过 Quay 官方 API 确认同一 MinIO 标签存在，manifest digest 为 `sha256:1dce27c494a16bae114774f1cec295493f3613142713130c2d22dd5696be6ad3`，因此替换镜像来源。MinIO 对应版本的[官方 README](https://github.com/minio/minio/blob/RELEASE.2024-12-18T13-15-44Z/README.md)也列出了 `quay.io/minio/minio`，这不是第三方镜像代理。
 
 本地教学保留官方示例的 `seccomp:unconfined`，没有开启 Milvus 认证。它不等于经过加固的生产模板。更换 MinIO 凭据时必须同时更新 Milvus 访问它所使用的凭据，不能只改一端。
 
